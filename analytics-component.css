@@ -1,0 +1,89 @@
+/* --- MODERN DESIGN SYSTEM --- */
+:root {
+    --primary-color: #4f46e5;
+    --primary-light: #eef2ff;
+    --danger-color: #ef4444;
+    --danger-light: #fee2e2;
+    --warning-color: #f59e0b;
+    --warning-light: #fffbeb;
+    --success-color: #10b981;
+    --success-light: #f0fdf4;
+    --info-color: #3b82f6;
+    --info-light: #eff6ff;
+    --bg-main: #ffffff;
+    --bg-subtle: #f9fafb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+}
+
+/* --- COMPONENT CONTAINER & LOADING STATE --- */
+#course-analytics-component { background-color: var(--bg-main); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; animation: fadeIn 0.5s ease-out; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.analytics-loading { display: flex; justify-content: center; align-items: center; padding: 4rem; color: var(--text-secondary); font-weight: 500; }
+
+/* --- TABS NAVIGATION --- */
+.analytics-tabs { display: flex; border-bottom: 1px solid var(--border-color); padding: 0 1.5rem; flex-wrap: wrap; }
+.tab-link { display: flex; align-items: center; gap: 0.5rem; padding: 1rem; border: none; background: none; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--text-secondary); border-bottom: 3px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+.tab-link:hover { color: var(--primary-color); }
+.tab-link.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+.tab-link svg { width: 20px; height: 20px; }
+
+/* --- VIEW PANE CONTENT --- */
+.view-pane { display: none; padding: 2rem; animation: viewFadeIn 0.4s ease; }
+.view-pane.active { display: block; }
+@keyframes viewFadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- GENERAL & UTILITY STYLES --- */
+.section { margin-bottom: 3rem; }
+.section:last-child { margin-bottom: 0; }
+.section h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 1.5rem 0; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+p.description { font-size: 1rem; color: var(--text-secondary); margin: -1rem 0 1.5rem 0; max-width: 80ch; }
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+/* --- INSIGHT CARDS --- */
+.insight-card { display: flex; gap: 1rem; padding: 1.25rem; border-radius: 12px; }
+.insight-card.warning { background: var(--warning-light); border-left: 4px solid var(--warning-color); }
+.insight-card.danger { background: var(--danger-light); border-left: 4px solid var(--danger-color); }
+.insight-card.success { background: var(--success-light); border-left: 4px solid var(--success-color); }
+.insight-card svg { flex-shrink: 0; margin-top: 3px; }
+.insight-card p { margin: 0; color: var(--text-primary); }
+.insight-card strong { font-weight: 600; }
+
+/* --- COURSE OVERVIEW (TABLE OF CONTENTS) --- */
+.toc-item { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 1rem; }
+.toc-item[open] > summary { border-bottom: 1px solid var(--border-color); }
+.toc-item summary { cursor: pointer; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.toc-item summary::-webkit-details-marker { display: none; }
+.toc-item .toc-title { font-weight: 600; font-size: 1.1rem; }
+.toc-stats { display: flex; gap: 1.5rem; }
+.toc-content { padding: 1.5rem; }
+
+/* --- STUDENT ANALYSIS --- */
+.student-analysis-container { display: grid; grid-template-columns: 40% 1fr; gap: 2rem; align-items: flex-start; }
+.student-cohort-list { max-height: 600px; overflow-y: auto; padding-right: 1rem; }
+.student-card { background: var(--bg-main); padding: 1rem; border-radius: 12px; border: 2px solid var(--border-color); cursor: pointer; transition: all 0.2s ease; }
+.student-card.active, .student-card:hover { border-color: var(--primary-color); transform: translateY(-2px); box-shadow: var(--shadow); }
+.student-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.student-card-header .name { font-weight: 600; font-size: 1.1em; color: var(--text-primary); }
+.status-tag { font-size: 0.8em; padding: 0.2rem 0.6rem; border-radius: 12px; color: white; font-weight: 600; }
+.status-tag.struggling { background-color: var(--warning-color); }
+.status-tag.excelling { background-color: var(--success-color); }
+.status-tag.on-track { background-color: var(--primary-color); }
+.student-card-body { display: flex; justify-content: space-around; gap: 1rem; }
+.stat { text-align: center; }
+.stat-value { font-weight: 600; font-size: 1.5em; color: var(--text-primary); }
+.stat-label { font-size: 0.8em; color: var(--text-secondary); }
+.empty-diagnostic { text-align: center; padding: 3rem; background: var(--bg-subtle); border-radius: 12px; }
+.empty-diagnostic svg { width: 48px; height: 48px; color: var(--text-secondary); margin-bottom: 1rem; }
+.diagnostic-panel { background: var(--bg-subtle); padding: 1.5rem; border-radius: 12px; }
+
+/* --- CONCEPT & ACTIVITY ANALYSIS --- */
+.analysis-card { background: var(--bg-subtle); padding: 1.5rem; border-radius: 12px; }
+.analysis-card .name { font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem; }
+.analysis-card-body { display: flex; gap: 1.5rem; }
+.difficulty-score { font-size: 1.5rem; font-weight: 700; }
+.difficulty-score.high { color: var(--danger-color); }
+.difficulty-score.medium { color: var(--warning-color); }
+.difficulty-score.low { color: var(--success-color); }

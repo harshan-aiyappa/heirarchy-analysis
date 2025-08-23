@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details Page</title>
+
+    <!-- Main Page Styles (Example) -->
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f9fafb; margin: 0; }
+        .page-header { background-color: white; padding: 2rem 4rem; border-bottom: 1px solid #e5e7eb; }
+        .page-header h1 { font-size: 2rem; margin: 0; color: #111827; }
+        .page-header p { margin: 0.25rem 0 0 0; color: #6b7280; }
+        .page-content { padding: 2rem 4rem; max-width: 1200px; margin: 0 auto; }
+        .course-description { background-color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid #e5e7eb; }
+    </style>
+
+    <!-- Component Dependencies -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Component-Specific Files -->
+    <link rel="stylesheet" href="analytics-component.css">
+    <script src="analytics-component.js" defer></script>
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>Introduction to Programming</h1>
+        <p>Course Code: CS101</p>
+    </header>
+
+    <main class="page-content">
+        <section class="course-description">
+            <h2>About this Course</h2>
+            <p>This is a foundational course on programming concepts, covering variables, data types, and more. Below you will find the detailed analytics for student performance and content effectiveness.</p>
+        </section>
+        
+        <div id="course-analytics-component">
+            <!-- JavaScript will initially show a loading state here -->
+        </div>
+
+    </main>
+
+</body>
+</html>Q
